@@ -5,6 +5,7 @@ import 'package:mia/constants/app_colors.dart';
 
 import '../constants/image_constants.dart';
 import '../constants/string_constants.dart';
+import 'loading_screen.dart';
 
 
 class SplashScreen extends StatefulWidget {
@@ -33,7 +34,12 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.primary,
-      body: SvgPicture.asset(ImageConstants.stars, width: ScreenUtil().screenWidth, height: ScreenUtil().screenHeight,)
+      body: Stack(
+        children: [
+          SvgPicture.asset(ImageConstants.stars, width: ScreenUtil().screenWidth, height: ScreenUtil().screenHeight,),
+          GradientProgressBar(loadingDuration: 1),
+        ],
+      )
     );
   }
 }

@@ -43,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
               right: 0.0,
               left: 0.0,
               child: Container(
-                width: ScreenUtil().screenWidth * 0.6,
+                width: ScreenUtil().screenWidth * 0.5,
                 height: ScreenUtil().screenHeight,
                 decoration: const BoxDecoration(color: Colors.transparent),
                 child: Column(
@@ -67,14 +67,17 @@ class _HomeScreenState extends State<HomeScreen> {
                             borderRadius: BorderRadius.circular(100.r)),
                         padding: EdgeInsets.symmetric(
                             vertical: 5.h, horizontal: 5.w),
-                        margin: EdgeInsets.only(bottom: 20.h),
+                        margin: EdgeInsets.only(bottom: 40.h),
                         child: Text(
                           "Senior Software Engineer",
                           style: AppTextStyles.text14w500,
                         )),
                     Text(
                       "Welcome to your voice interview!",
-                      style: AppTextStyles.text32w600,
+                      style: AppTextStyles.text32w600.copyWith(
+                        fontFamily: "EightiesComeback",
+                        fontWeight: FontWeight.w500
+                      ),
                     ),
                     GlassmorphicForm(),
                     const Spacer(),

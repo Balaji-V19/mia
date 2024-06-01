@@ -66,7 +66,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
                               .copyWith(color: AppColors.textColor),
                         ),
                       ),
-                      GradientProgressBar(),
+                      GradientProgressBar(loadingDuration: 5),
                       const Spacer(),
                     ],
                   ),
@@ -80,6 +80,8 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
 
 class GradientProgressBar extends StatefulWidget {
+  int loadingDuration = 0;
+  GradientProgressBar({required this.loadingDuration});
   @override
   _GradientProgressBarState createState() => _GradientProgressBarState();
 }
@@ -91,7 +93,7 @@ class _GradientProgressBarState extends State<GradientProgressBar> with SingleTi
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: const Duration(seconds: 5),
+      duration: Duration(seconds: widget.loadingDuration),
       vsync: this,
     )..addListener(() {
       if (_controller.isCompleted) {

@@ -39,6 +39,9 @@ dependencies:
   http: ^1.1.0
   flutter_svg: ^2.0.6
   flutter_screenutil: ^5.9.0
+  just_audio: ^0.9.22
+  js: ^0.6.3
+  file_picker:
   intl: ^0.17.0
   path_provider:
   siri_wave:
@@ -84,10 +87,13 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: inter
+    - family: InterRegular
       fonts:
-        - asset: assets/fonts/inter_variable.ttf
-        - asset: assets/fonts/InterVariable-Italic.ttf
+        - asset: assets/fonts/Inter-Regular.otf
+        - asset: assets/fonts/Inter-Black.otf
+    - family: EightiesComeback
+      fonts:
+        - asset: assets/fonts/EightiesComeback-Regular.otf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

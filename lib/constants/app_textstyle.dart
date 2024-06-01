@@ -8,7 +8,7 @@ class _InterFonts {
     required TextStyle textStyle,
   }) {
     return const TextStyle(
-      fontFamily: 'inter',
+      fontFamily: 'InterRegular',
     ).merge(textStyle);
   }
 }

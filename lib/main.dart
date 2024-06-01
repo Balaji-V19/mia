@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mia/notifiers/init_notifier.dart';
+import 'package:mia/notifiers/interview_notifier.dart';
 import 'package:mia/screens/splash_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:mia/router.dart' as Router;
@@ -27,12 +27,12 @@ class MiaHome extends StatefulWidget {
 
 class _MiaHomeState extends State<MiaHome> {
 
-  late InitNotifier _initNotifier;
+  late InterviewNotifier _initNotifier;
 
   @override
   void initState() {
     super.initState();
-    _initNotifier = InitNotifier();
+    _initNotifier = InterviewNotifier();
   }
 
   @override
