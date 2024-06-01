@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mia/notifiers/init_notifier.dart';
 import 'package:mia/screens/splash_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:mia/router.dart' as Router;
@@ -25,11 +26,20 @@ class MiaHome extends StatefulWidget {
 }
 
 class _MiaHomeState extends State<MiaHome> {
+
+  late InitNotifier _initNotifier;
+
+  @override
+  void initState() {
+    super.initState();
+    _initNotifier = InitNotifier();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
         providers: [
-          // ChangeNotifierProvider(create: (_) => _authNotifier),
+          ChangeNotifierProvider(create: (_) => _initNotifier),
         ],
         builder: (context, child) {
           ScreenUtil.init(context);
@@ -61,7 +71,7 @@ class _MiaHomeState extends State<MiaHome> {
             themeMode: ThemeMode.system,
             navigatorKey: navigatorKey,
             debugShowCheckedModeBanner: false,
-            title: 'FastChat',
+            title: 'Mia',
             home: const SplashScreen(),
             onGenerateRoute: Router.Router().routes,
           );

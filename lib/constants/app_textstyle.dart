@@ -8,7 +8,7 @@ class _InterFonts {
     required TextStyle textStyle,
   }) {
     return const TextStyle(
-      fontFamily: 'SourceSansPro',
+      fontFamily: 'inter',
     ).merge(textStyle);
   }
 }

@@ -1,5 +1,8 @@
 
 import 'package:flutter/material.dart';
+import 'package:mia/screens/home_screen.dart';
+import 'package:mia/screens/interview_screen.dart';
+import 'package:mia/screens/loading_screen.dart';
 import 'package:mia/screens/splash_screen.dart';
 import 'constants/string_constants.dart';
 
@@ -8,9 +11,24 @@ class Router {
 
   Route<dynamic>? routes(RouteSettings settings) {
     switch (settings.name) {
-      case StringConstants.SPLASH_PAGE:
+      case StringConstants.SPLASH_SCREEN:
         return MaterialPageRoute(
           builder: (_) => const SplashScreen(),
+          settings: settings,
+        );
+      case StringConstants.HOME_SCREEN:
+        return MaterialPageRoute(
+          builder: (_) => const HomeScreen(),
+          settings: settings,
+        );
+      case StringConstants.LOADING_SCREEN:
+        return MaterialPageRoute(
+          builder: (_) => const LoadingScreen(),
+          settings: settings,
+        );
+      case StringConstants.INTERVIEW_SCREEN:
+        return MaterialPageRoute(
+          builder: (_) => const InterviewScreen(),
           settings: settings,
         );
       default:
