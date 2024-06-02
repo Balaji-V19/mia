@@ -34,6 +34,7 @@ class InterviewScreen extends StatefulWidget {
 
 class _InterviewScreenState extends State<InterviewScreen> {
   final AudioPlayer _audioPlayer = AudioPlayer();
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
@@ -58,8 +59,17 @@ class _InterviewScreenState extends State<InterviewScreen> {
     });
   }
 
+  void _scrollToEnd() {
+    _scrollController.animateTo(
+      _scrollController.position.maxScrollExtent,
+      duration: const Duration(seconds: 1),
+      curve: Curves.easeInOut,
+    );
+  }
+
   Future<void> _playAudioFromBytes(Uint8List audioBytes,
       [bool restartRecording = false]) async {
+    _scrollToEnd();
     var interviewNotifier = Provider.of<InterviewNotifier>(context, listen: false);
     final blob = html.Blob([audioBytes]);
     final url = html.Url.createObjectUrlFromBlob(blob);
@@ -84,6 +94,7 @@ class _InterviewScreenState extends State<InterviewScreen> {
 
   @override
   void dispose() {
+    _scrollController.dispose();
     stopRecording();
     super.dispose();
   }
@@ -253,6 +264,7 @@ class _InterviewScreenState extends State<InterviewScreen> {
                         ),
                         padding: EdgeInsets.all(24.r),
                         child: SingleChildScrollView(
+                          controller: _scrollController,
                           child: Column(
                             children: interviewNotifier.chatModel.map((e) {
                               if (e.isClient) {
