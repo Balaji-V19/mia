@@ -19,7 +19,7 @@ function startRecording() {
       };
 
       mediaRecorder.onstop = async () => {
-        const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+        const audioBlob = new Blob(audioChunks, { type: 'audio/mpeg' });
         audioChunks = [];
         const arrayBuffer = await audioBlob.arrayBuffer();
         const audioBytes = new Uint8Array(arrayBuffer);

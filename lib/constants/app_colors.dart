@@ -10,4 +10,6 @@ class AppColors {
   static const Color background = Color(0x7F13142E);
   static const Color textColor = Color(0xFFE0C3FC);
   static const Color shadowColor = Color(0xff5E64D2);
+  static const Color userChatColor = Color(0xff099250);
+  static const Color textBlue = Color(0xff8EC5FC);
 }

@@ -49,8 +49,8 @@ class _LoadingScreenState extends State<LoadingScreen> {
                       const Spacer(),
                       Text(
                         "Meet",
-                        style: AppTextStyles.text16w500
-                            .copyWith(color: AppColors.textColor),
+                        style: AppTextStyles.text14w500
+                            .copyWith(color: AppColors.textBlue),
                       ),
                       Padding(
                         padding: EdgeInsets.symmetric(vertical: 20.h),
@@ -62,8 +62,8 @@ class _LoadingScreenState extends State<LoadingScreen> {
                         padding: EdgeInsets.only(bottom: 10.h),
                         child: Text(
                           "Your Ai interviewer for this round",
-                          style: AppTextStyles.text16w500
-                              .copyWith(color: AppColors.textColor),
+                          style: AppTextStyles.text14w500
+                              .copyWith(color: AppColors.textBlue),
                         ),
                       ),
                       GradientProgressBar(loadingDuration: 5),

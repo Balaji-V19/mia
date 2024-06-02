@@ -187,8 +187,14 @@ class _GlassmorphicFormState extends State<GlassmorphicForm> {
                   color: AppColors.white.withOpacity(0.07)
                 ),
                 child: interviewNotifier.isLoading?
-                const Center(
-                  child: CircularProgressIndicator(),
+                Center(
+                  child: SizedBox(
+                    height: 14.h,
+                    width: 14.h,
+                    child: const Center(
+                      child: CircularProgressIndicator(),
+                    ),
+                  ),
                 ):
                 Center(
                   child: Text(

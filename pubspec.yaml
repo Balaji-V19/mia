@@ -43,6 +43,7 @@ dependencies:
   js: ^0.6.3
   file_picker:
   intl: ^0.17.0
+  mime: ^1.0.0
   path_provider:
   siri_wave:
 
